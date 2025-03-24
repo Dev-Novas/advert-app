@@ -1,8 +1,21 @@
 import { SearchIcon } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
+import { apiGetAllAdverts } from "../../services/adverts";
 import { Link } from "react-router";
 
 const Adverts = () => {
+  const fetchAds = async () =>{
+    try {
+      const res = await apiGetAllAdverts ();
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
+  };
+useEffect(() => {
+  fetchAds();
+}, [])
+  
   const ads = [
     { id: 1, title: "iPhone 13", description: "Brand new iPhone 13, 128GB", price: "$799", image: "https://via.placeholder.com/300" },
     { id: 2, title: "Samsung 4K TV", description: "55-inch 4K UHD Smart TV", price: "$499", image: "https://via.placeholder.com/300" },
