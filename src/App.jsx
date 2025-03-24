@@ -20,6 +20,7 @@ function App() {
           <Route path="adverts" element={<Adverts />} />
           <Route path="adverts/:id" element={<SingleAd />} />
         </Route>
+        
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
