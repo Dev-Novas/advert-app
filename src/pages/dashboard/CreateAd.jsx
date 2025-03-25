@@ -1,7 +1,21 @@
 import React from "react";
 import video1 from "../../assets/photos/video1.mp4";
+import { apiAddAdvert } from "../../services/adverts";
 
 const CreateAd = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target); //line to get your data
+
+    try {
+      const response = await apiAddAdvert(formData);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex-1 flex flex-col p-6 w-full bg-[#F7F7F7] pt-14">
       <h1
@@ -28,7 +42,11 @@ const CreateAd = () => {
           </video>
         </div>
         <div className="w-full md:w-1/2 bg-white p-6 shadow-md rounded-lg h-[500px]">
-          <form action="" className="flex flex-col space-y-2">
+          <form
+            action=""
+            className="flex flex-col space-y-2"
+            onSubmit={handleSubmit}
+          >
             <div>
               <label
                 htmlFor="title"
@@ -75,11 +93,11 @@ const CreateAd = () => {
                 required
               >
                 <option value="tech">Select Category</option>
-                <option value="tech">Laptops</option>
-                <option value="tech">Smartphones</option>
-                <option value="tech">Headphones</option>
-                <option value="tech">Smartwatches</option>
-                <option value="tech">Accessories</option>
+                <option value="laptops">Laptops</option>
+                <option value="smartphones">Smartphones</option>
+                <option value="headphones">Headphones</option>
+                <option value="smartwatches">Smartwatches</option>
+                <option value="accessories">Accessories</option>
               </select>
             </div>
             <div>
@@ -93,6 +111,7 @@ const CreateAd = () => {
                 type="file"
                 name="image"
                 id="image"
+                accept="image/*"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               />
