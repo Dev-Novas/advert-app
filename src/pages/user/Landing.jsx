@@ -18,7 +18,7 @@ const Landing = () => {
       <div className="bg-[url('assets/images/herobg1.png')] min-h-screen flex flex-col items-center justify-center px-4">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl text-white font-bold pb-4">
-            Welcome To DiGi HUB
+            Welcome To DiGi TECH
           </h1>
           <p className="text-white text-lg md:text-2xl font-normal mb-3">
             Limitless Digital Products, Unlimited Possibilities!
@@ -52,12 +52,12 @@ const Landing = () => {
             {/* Category Dropdown */}
             <div className=" w-full md:w-40">
               <select className="w-full px-4 py-2 rounded-md border outline-none text-gray-700">
-                <option value="">All Categories</option>
-                <option value="">Laptops</option>
-                <option value="">Smartphones</option>
-                <option value="">Headphones</option>
-                <option value="">Smartwatches</option>
-                <option value="">Accessories</option>
+                <option value="allCategories">All Categories</option>
+                <option value="laptop">Laptops</option>
+                <option value="smartphones">Smartphones</option>
+                <option value="headphones">Headphones</option>
+                <option value="smartwatches">Smartwatches</option>
+                <option value="accessories">Accessories</option>
               </select>
             </div>
 

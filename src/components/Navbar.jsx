@@ -1,5 +1,6 @@
 import React from "react";
 import eg1 from "../assets/photos/eg1.png"
+import { Link } from "react-router";
 
 const Navbar = () => {
   return(
@@ -17,8 +18,10 @@ const Navbar = () => {
         </div>
         <div className="flex items-center space-x-4">
           <div>|</div>
-          <a href="#">Log In</a>
+          <a href="/login">Log In</a>
+          <Link to = "/signup">
           <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Sign Up</button>
+          </Link>
         </div>
       </div>
     </nav>
