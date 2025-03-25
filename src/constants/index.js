@@ -1,4 +1,4 @@
-import { FileIcon, House, PlusIcon, Settings, User } from "lucide-react";
+import { Edit, FileIcon, House, PlusIcon, User } from "lucide-react";
 
 export default {
   NAVLINKS: [
@@ -23,9 +23,9 @@ export default {
       icon: User,
     },
     {
-      name: "Settings",
-      path: "/dashboard",
-      icon: Settings,
+      name: "Update Ad",
+      path: "/dashboard/edit-ad",
+      icon: Edit,
     },
   ],
 };
