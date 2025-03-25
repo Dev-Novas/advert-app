@@ -16,7 +16,13 @@ const SingleAd = () => {
 
   
   return (
-    <div className="max-w-5xl mx-auto p-6 mt-24">
+
+    <div>
+      <div className="min-h-[70vh]  bg-[url('assets/images/single2.png')] bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center px-4">
+
+      </div>
+      <div className="max-w-5xl mx-auto p-6 mt-24 mb-24">
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Image Section */}
         <div>
@@ -41,6 +47,7 @@ const SingleAd = () => {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };

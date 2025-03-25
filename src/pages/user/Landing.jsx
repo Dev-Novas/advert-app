@@ -72,16 +72,16 @@ const Landing = () => {
         <div className="w-full max-w-4xl px-4 mt-4">
           <div className="flex flex-wrap gap-2 items-center">
             <p className="text-gray-800 font-medium">Trending Search:</p>
-            <button className="px-3 py-1 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-md transition">
+            <button className="px-3 py-1 border border-blue-500 text-blue-950 hover:bg-blue-500 hover:text-white rounded-md transition">
               Samsung
             </button>
-            <button className="px-3 py-1 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-md transition">
+            <button className="px-3 py-1 border border-blue-500 text-blue-950 hover:bg-blue-500 hover:text-white rounded-md transition">
               iPhone
             </button>
-            <button className="px-3 py-1 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-md transition">
+            <button className="px-3 py-1 border border-blue-500 text-blue-950 hover:bg-blue-500 hover:text-white rounded-md transition">
               Headset
             </button>
-            <button className="px-3 py-1 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-md transition">
+            <button className="px-3 py-1 border border-blue-500 text-blue-950 hover:bg-blue-500 hover:text-white rounded-md transition">
               Smartwatch
             </button>
           </div>
@@ -262,6 +262,7 @@ const Landing = () => {
           </div>
         </div>
       </div>
+      {/* popular categories */}
       <section className="py-12 bg-white text-center">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-blue-600">
@@ -272,35 +273,35 @@ const Landing = () => {
         </div>
         {/* categories */}
         <div className="flex gap-x-10 justify-center items-center text-gray-500">
-          <div className="hover:scale-105 transition-transform hover:bg-blue-200 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
+          <div className="hover:scale-105 transition-transform hover:bg-blue-300 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src={smartphone} alt="Phone" />
             <p className="mt-2 text-sm">SmartPhones</p>
             <span className="text-xs bg-gray-200 px-2 py-1 rounded-full mt-1">
               1,921
             </span>
           </div>
-          <div className="hover:scale-105 transition-transform hover:bg-blue-200 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
+          <div className="hover:scale-105 transition-transform hover:bg-blue-300 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src={laptop1} alt="laptop" />
             <p className="mt-2 text-sm">Laptops</p>
             <span className="text-xs bg-gray-200 px-2 py-1 rounded-full mt-1">
               3,675
             </span>
           </div>
-          <div className="hover:scale-105 transition-transform hover:bg-blue-200 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
+          <div className="hover:scale-105 transition-transform hover:bg-blue-300 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src={keyboard} alt="keyboard" />
             <p className="mt-2 text-sm">Accessories</p>
             <span className="text-xs bg-gray-200 px-2 py-1 rounded-full mt-1">
               1,112
             </span>
           </div>
-          <div className="hover:scale-105 transition-transform hover:bg-blue-200 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
+          <div className="hover:scale-105 transition-transform hover:bg-blue-300 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src={headphones} alt="headphones" />
             <p className="mt-2 text-sm">Headphones</p>
             <span className="text-xs bg-gray-200 px-2 py-1 rounded-full mt-1">
               400
             </span>
           </div>
-          <div className="hover:scale-105 transition-transform hover:bg-blue-200 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
+          <div className="hover:scale-105 transition-transform hover:bg-blue-300 hover:text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src={smartwatch} alt="smartwatch" />
             <p className="mt-2 text-sm">Smartwatches</p>
             <span className="text-xs bg-gray-200 px-2 py-1 rounded-full mt-1">

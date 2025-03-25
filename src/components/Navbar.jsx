@@ -1,11 +1,12 @@
 import React from "react";
+import eg1 from "../assets/photos/eg1.png"
 
 const Navbar = () => {
   return(
     <nav className="flex justify-between items-center px-20 py-6 fixed top-0 left-0 w-full text-black text-lg  bg-transparent backdrop-blur-md">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-xl font-bold text-gray-800">
-          DIGITAL DEALS HUB
+          <img src={eg1} alt="logo" className="h-[50px]" />
         </div>
         <div className="flex items-center space-x-6">
           <a href="/">Home</a>
