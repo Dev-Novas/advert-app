@@ -1,7 +1,8 @@
 import React from "react";
 import video1 from "../../assets/photos/video1.mp4";
+import edit from "../../assets/photos/edit1.png";
 
-const CreateAd = () => {
+const EditProduct = () => {
   return (
     <div className="flex-1 flex flex-col p-6 w-full bg-[#F7F7F7] pt-14">
       <h1
@@ -9,14 +10,20 @@ const CreateAd = () => {
   font-bold text-gray-700 p-1.5  border-b-2 border-blue-500 pb-2 
   w-fit mx-auto"
       >
-        Create Your Advert
+        Update Advert
       </h1>
+
       <div
         className="flex w-full flex-1 md:flex-row items-center justify-center  gap-8 p-6 bg-gradient-to-r from-blue-50 to-white shadow-lg border border-gray-300
  rounded-md"
       >
         <div className="w-full md:w-1/2 h-[500px]">
-          <video
+          <img
+            src={edit}
+            alt=""
+            className="w-full  h-full  object-cover rounded-lg shadow-lg"
+          />
+          {/* <video
             src={video1}
             className="w-full  h-full  object-cover rounded-lg shadow-lg"
             autoPlay
@@ -25,7 +32,7 @@ const CreateAd = () => {
             playsInline
           >
             <source src={video1} type="video/mp4" />
-          </video>
+          </video> */}
         </div>
         <div className="w-full md:w-1/2 bg-white p-6 shadow-md rounded-lg h-[500px]">
           <form action="" className="flex flex-col space-y-2">
@@ -122,7 +129,7 @@ const CreateAd = () => {
                 type="submit"
                 className="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
-                Post Advert
+                Update Advert
               </button>
             </div>
           </form>
@@ -132,4 +139,4 @@ const CreateAd = () => {
   );
 };
 
-export default CreateAd;
+export default EditProduct;

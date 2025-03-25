@@ -3,29 +3,29 @@ import React from "react";
 
 const DashNav = () => {
   return (
-    <div className="flex justify-around items-center  w-full px-2 py-3 bg-[#20B2AA] h-14 fixed">
+    <div className="flex justify-around items-center  w-full px-2 py-3 bg-white h-14 fixed border-b shadow-md border border-gray-300">
       <div
         className="flex justify-between gap-x-2 cursor-pointer 
                 transition-all duration-300 ease-in-out 
-                hover:bg-white hover:text-black hover:shadow-md hover:rounded-md px-3 py-2"
+                hover:bg-blue-300 hover:text-white hover:shadow-md hover:rounded-md px-3 py-2"
       >
-        <LayoutDashboard className="text-[#CDAA7D]" />
+        <LayoutDashboard className="text-[#2563eb]" />
         <span>Dashboard</span>
       </div>
       <div
         className="flex justify-between gap-x-2 cursor-pointer 
                 transition-all duration-300 ease-in-out 
-                hover:bg-white hover:text-black hover:shadow-md hover:rounded-md px-3 py-2"
+                hover:bg-blue-300 hover:text-white hover:shadow-md hover:rounded-md px-3 py-2"
       >
-        <ChartBar className="text-[#CDAA7D]" />
+        <ChartBar className="text-[#2563eb]" />
         <span>Analytics</span>
       </div>
       <div
         className="flex justify-between gap-x-2 cursor-pointer 
                 transition-all duration-300 ease-in-out 
-                hover:bg-white hover:text-black hover:shadow-md hover:rounded-md px-3 py-2"
+                hover:bg-blue-300 hover:text-white hover:shadow-md hover:rounded-md px-3 py-2"
       >
-        <Settings className="text-[#CDAA7D]" />
+        <Settings className="text-[#2563eb]" />
         <span>Settings</span>
       </div>
       <div className="w-1/3 ">

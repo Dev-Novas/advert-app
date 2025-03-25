@@ -10,6 +10,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import Overview from "./pages/dashboard/Overview";
 import CreateAd from "./pages/dashboard/CreateAd";
 import VendorAds from "./pages/dashboard/VendorAds";
+import EditProduct from "./pages/dashboard/EditProduct";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path="adverts" element={<Adverts />} />
           <Route path="adverts/:id" element={<SingleAd />} />
         </Route>
-        
+
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
@@ -28,6 +29,7 @@ function App() {
           <Route index={true} element={<Overview />} />
           <Route path="create-ad" element={<CreateAd />} />
           <Route path="ads" element={<VendorAds />} />
+          <Route path="edit-ad" element={<EditProduct />} />
         </Route>
       </Routes>
     </BrowserRouter>
