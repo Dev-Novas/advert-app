@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 import VendorCard from "../../components/VendorCard";
+import { apiGetVenderAdverts } from "../../services/adverts";
 
 const VendorAds = () => {
-  const products = [
-    { id: 1, name: "Laptop", price: "$1000" },
-    { id: 2, name: "Smartphone", price: "$600" },
-    { id: 3, name: "Headphones", price: "$100" },
-    { id: 4, name: "Camera", price: "$700" },
-  ];
+  // const products = [
+  //   { id: 1, name: "Laptop", price: "$1000" },
+  //   { id: 2, name: "Smartphone", price: "$600" },
+  //   { id: 3, name: "Headphones", price: "$100" },
+  //   { id: 4, name: "Camera", price: "$700" },
+  // ];
+
+  const [ads, setAds] = useState([]);
+
+  //fetching data from api
+  const getAds = async () => {
+    try {
+      const response = await apiGetVenderAdverts();
+      // console.log(response.data);
+      setAds(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAds();
+  }, []);
 
   return (
     <div className="p-4 pt-14 bg-[#F7F7F7] ">
@@ -21,7 +40,13 @@ const VendorAds = () => {
           My Products
         </h1>
       </div>
-      <div
+      <div className="">
+        {ads.map((ad) => {
+          return <VendorCard key={ad.id} ad={ad} />;
+        })}
+      </div>
+
+      {/* <div
         className="grid grid-cols-4 gap-4 bg-gray-100 p-6 bg-gradient-to-r from-blue-50 to-white shadow-lg border border-gray-300
   rounded-md"
       >
@@ -35,7 +60,7 @@ const VendorAds = () => {
             />
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
