@@ -1,20 +1,24 @@
 import React from "react";
-import Laptop from "../../assets/pics/laptop-2.mp4"
+import Laptop from "../../assets/pics/laptop-2.mp4";
 import { apiSignup } from "../../services/auth";
 
 const Signup = () => {
   const handleSubmit = async (event) => {
+    // Prevent default submit bahaviour
     event.preventDefault();
-    const formData = new FormData(event.target);
+    // Show loading indicator
+    // Collect form data
+    const data = new FormData(event.target);
+    // Post data to backend
     try {
-      const response = await apiSignup(formData);
-      console.log(response)
+      const response = await apiSignup(data);
+      console.log(response);
     } catch (error) {
-      console.log(error)
+      console.log(error);
+    } finally {
+      // Hide loading indicator
     }
-  }
-
-
+  };
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
@@ -35,7 +39,10 @@ const Signup = () => {
           <h1 className="text-2xl font-semibold text-center mb-6">Sign Up</h1>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-white">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-white"
+              >
                 Full Name
               </label>
               <input
@@ -49,7 +56,10 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-white">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-white"
+              >
                 Email
               </label>
               <input
@@ -63,7 +73,10 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="role" className="block text-sm font-medium text-white">
+              <label
+                htmlFor="role"
+                className="block text-sm font-medium text-white"
+              >
                 Role
               </label>
               <input
@@ -77,7 +90,10 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-white">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-white"
+              >
                 Password
               </label>
               <input
@@ -91,7 +107,10 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-blue-300">
+              <label
+                htmlFor="confirmPassword"
+                className="block text-sm font-medium text-blue-300"
+              >
                 Confirm Password
               </label>
               <input
