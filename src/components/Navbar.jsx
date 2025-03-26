@@ -23,7 +23,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none md:flex items-center space-x-6 px-6 py-4 md:py-0 transition-all duration-300 ${menuOpen ? "block" : "hidden"}`}>
+        <div className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none md:flex items-center space-x-6 px-6 py-4 md:py-0 transition-all duration-300 ${menuOpen ? "block" : "hidden text-lg"}`}>
           <a href="/" className="block md:inline py-2 md:py-0">Home</a>
           <a href="/adverts" className="block md:inline py-2 md:py-0">Products</a>
           <a href="#" className="block md:inline py-2 md:py-0">About</a>
