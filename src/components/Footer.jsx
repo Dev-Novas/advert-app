@@ -3,14 +3,17 @@ import { Facebook, Twitter, Instagram, Linkedin, Search } from "lucide-react";
 
 const Footer = () => {
   return (
-    <div className=" min-h-screen bg-[#333333] text-white pt-20 pl-20 pr-20 overflow-hidden ">
-      <div className="w-screen flex flex-row justify-around pb-20 ">
+    <div className=" w-full min-h-screen bg-[#333333] text-white pt-20 pl-20 pr-20 overflow-hidden ">
+      <div className="w-full flex flex-row justify-around pb-20  ">
         <div className="flex flex-col space-y-4">
           <h1 className="text-3xl font-bold">About</h1>
           <p className="font-light">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            <br /> Provident rerum unde possimus molestias dolorem fuga,
-            <br /> illo quis fugiat!
+            Welcome to Digital Deals Hub, the ultimate platform for <br />
+            advertising and discovering digital hardware. We connect buyers and <br />
+            sellers with the latest gadgets, from laptops and smartphones to <br />
+            gaming accessories and workstations. Our user-friendly interface <br />
+            ensures a seamless experience, making it easy to showcase and find <br />
+            top-quality products.
           </p>
         </div>
         <div className="flex flex-col space-y-4 ">
@@ -23,17 +26,19 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex flex-col space-y-4">
-          <h1 className="text-2xl font-bold" >Follow Us</h1>
+          <h1 className="text-2xl font-bold">Follow Us</h1>
           <Facebook className="cursor-pointer hover:text-blue-300 font-light" />
           <Twitter className="cursor-pointer hover:text-blue-300 font-light" />
           <Instagram className="cursor-pointer hover:text-blue-300 font-light" />
           <Linkedin className="cursor-pointer hover:text-blue-300 font-light" />
         </div>
-        <div className=" border border-grey-300 flex h-10 max-w-50 mr-20 w-20">
-          <Search className="cursor-product hover:text-blue-300 font-bold "/>
+        <div className=" border border-grey-300 flex h-10 max-w-50 mr-20 w-50">
+         <div className="flex justify-end"> <Search className="cursor-product hover:text-blue-300 font-bol " /></div>
         </div>
       </div>
-      <h1 className="flex justify-center p-40 border-t font-light">Copyright ©2025 All rights reserved</h1>
+      <h1 className="flex justify-center p-40 border-t font-light">
+        Copyright ©2025 All rights reserved
+      </h1>
     </div>
   );
 };
