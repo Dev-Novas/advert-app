@@ -8,11 +8,13 @@ const VendorCard = ({ ad }) => {
     <div className="bg-gray-300 rounded-md">
       <div className="bg-white w-[260px] flex flex-col justify-center items-center rounded-lg border border-stone-300">
         <div>
-          <img
-            src={`https://res.cloudinary.com/dwhmwz2nm/image/upload/${ad.image}`}
-            alt="product.image"
-            className="w-full h-[200px] object-cover rounded-t-lg shadow-md"
-          />
+          <Link to="/dashboard/single-product">
+            <img
+              src={`https://res.cloudinary.com/dwhmwz2nm/image/upload/${ad.image}`}
+              alt="product.image"
+              className="w-full h-[200px] object-cover rounded-t-lg shadow-md"
+            />
+          </Link>
         </div>
         <div className="w-[250px] p-4 flex flex-col gap-y-2">
           <h3 className="text-[22px] text-gray-800 font-extrabold">

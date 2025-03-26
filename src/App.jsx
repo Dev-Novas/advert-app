@@ -11,6 +11,8 @@ import Overview from "./pages/dashboard/Overview";
 import CreateAd from "./pages/dashboard/CreateAd";
 import VendorAds from "./pages/dashboard/VendorAds";
 import EditProduct from "./pages/dashboard/EditProduct";
+import SingleProduct from "./pages/dashboard/SingleProduct";
+import VendorProfile from "./pages/dashboard/VendorProfile";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path="create-ad" element={<CreateAd />} />
           <Route path="ads" element={<VendorAds />} />
           <Route path="edit-ad" element={<EditProduct />} />
+          <Route path="single-product" element={<SingleProduct />} />
+          <Route path="vendor-profile" element={<VendorProfile />} />
         </Route>
       </Routes>
     </BrowserRouter>
