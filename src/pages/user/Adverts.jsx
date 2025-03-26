@@ -1,4 +1,4 @@
-import { SearchIcon } from "lucide-react";
+
 import React, { useEffect } from "react";
 import { apiGetAllAdverts } from "../../services/adverts";
 import { Link } from "react-router";
@@ -75,11 +75,21 @@ const Adverts = () => {
           </p>
         </div>
       </div>
-      <div>
+
+      <div className="flex items-center gap-4 mt-4 justify-center">
+        {/* Filter Dropdown */}
+        <select className="px-4 py-2 ml-4 border rounded-md text-gray-700 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+          <option value="category">All Categories</option>
+          <option value="title">Title</option>
+          <option value="gte">Price greater than</option>
+          <option value="lte">Price less than</option>
+        </select>
+
+        {/* Search Input */}
         <input
           type="text"
-          placeholder="Search by title,description or price"
-          className="w-full sm:w-96 md:w-[500px] lg:w-[600px] px-4 py-2 mt-4 border rounded-md outline-none text-gray-700 text-sm mx-auto block focus:border-blue-500 focus:ring-1 focus:ring-blue-500 "
+          placeholder="Search by title, description, or price"
+          className="w-full sm:w-96 md:w-[500px] lg:w-[600px] px-4 py-2 border rounded-md outline-none text-gray-700 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-50"
         />
       </div>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { HeartIcon, MapPinIcon, SmartphoneIcon } from "lucide-react";
+import { HeartIcon, MapPinIcon } from "lucide-react";
 import phone from "../../assets/images/phone.png";
 import accessories from "../../assets/images/accessories.png";
 import headphone from "../../assets/images/headphone.png";
@@ -12,6 +12,8 @@ import smartwatch from "../../assets/images/smartwatch.png";
 import keyboard from "../../assets/images/keyboard.png";
 
 const Landing = () => {
+
+  
   return (
     <div>
       {/* Hero Section */}
@@ -310,22 +312,62 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <div className="bg-gray-100 p-8 flex justify-center items-center min-h-screen">
-        <div className="w-full max-w-2xl">
-        <h2 className="text-xl font-bold text-blue-600 mb-4 text-center ">Trending Today</h2>
-        <div className="grid grid-cols-1 gap-4">
+
+      {/* trending today */}
+      <div className="bg-gray-100 p-8 flex justify-center items-center min-h-[80px]">
+        <div className="w-full max-w-4xl">
+        <h2 className="text-xl font-bold text-blue-600 mb-4 text-center">Trending Today</h2>
+        <div className="grid grid-cols-2 gap-4">
         <div class="flex flex-col sm:flex-row bg-white rounded-lg shadow-md overflow-hidden">
             <img src={headphone} alt="headphone" className="w-full sm:w-1/3 h-40 object-cover" />
-            <div class="p-4 w-full sm:w-2/3">
-                <span class="text-xs bg-gray-200 px-2 py-1 rounded-full">Headphones</span>
-                <h3 class="text-lg font-semibold text-blue-600 mt-2">Jam to the music</h3>
-                <p class="text-sm text-gray-600">Plot No.7, Buro Osu</p>
-                <div class="flex items-center mt-2 text-yellow-500">
-                    ⭐⭐⭐⭐⭐ <span class="text-gray-500 text-sm ml-2">(3 Reviews)</span>
+            <div className="p-4 w-full sm:w-2/3">
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded-full">Headphones</span>
+                <h3 className="text-lg font-semibold text-blue-600 mt-2">Jam to the music</h3>
+                <p className="text-sm text-gray-600">Plot No.7, Buro Osu</p>
+                <div className="flex items-center mt-2 text-yellow-500">
+                    ⭐⭐⭐⭐⭐ <span className="text-gray-500 text-sm ml-2">(3 Reviews)</span>
                 </div>
             </div>
         </div>
+
+        <div className="flex flex-col sm:flex-row bg-white rounded-lg shadow-md overflow-hidden">
+            <img src={phone} alt="phone" className="w-full sm:w-1/3 h-40 object-cover" />
+            <div className="p-4 w-full sm:w-2/3">
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded-full">Phones</span>
+                <h3 className="text-lg font-semibold text-blue-600 mt-2">Own A New Phone</h3>
+                <p className="text-sm text-gray-600">Plot No.7, Buro Osu</p>
+                <div className="flex items-center mt-2 text-yellow-500">
+                    ⭐⭐⭐⭐⭐ <span className="text-gray-500 text-sm ml-2">(3 Reviews)</span>
+                </div>
+            </div>
         </div>
+        <div className="flex flex-col sm:flex-row bg-white rounded-lg shadow-md overflow-hidden">
+            <img src={laptop} alt="laptop" className="w-full sm:w-1/3 h-40 object-cover" />
+            <div className="p-4 w-full sm:w-2/3">
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded-full">Laptops</span>
+                <h3 className="text-lg font-semibold text-blue-600 mt-2">Play with the keys</h3>
+                <p className="text-sm text-gray-600">Plot No.7, Buro Osu</p>
+                <div className="flex items-center mt-2 text-yellow-500">
+                    ⭐⭐⭐⭐⭐ <span className="text-gray-500 text-sm ml-2">(3 Reviews)</span>
+                </div>
+            </div>
+           </div>
+           <div className="flex flex-col sm:flex-row bg-white rounded-lg shadow-md overflow-hidden">
+            <img src={accessories} alt="accessories" className="w-full sm:w-1/3 h-40 object-cover" />
+            <div className="p-4 w-full sm:w-2/3">
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded-full">Accessories</span>
+                <h3 className="text-lg font-semibold text-blue-600 mt-2">Great assets just for you</h3>
+                <p className="text-sm text-gray-600">Plot No.7, Buro Osu</p>
+                <div className="flex items-center mt-2 text-yellow-500">
+                    ⭐⭐⭐⭐⭐ <span className="text-gray-500 text-sm ml-2">(3 Reviews)</span>
+                </div>
+            </div>
+        </div>
+
+        
+        </div>
+
+        
 
       
         </div>
