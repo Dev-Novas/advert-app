@@ -15,6 +15,11 @@ import SingleProduct from "./pages/dashboard/SingleProduct";
 import VendorProfile from "./pages/dashboard/VendorProfile";
 import ProfileUpdate from "./pages/dashboard/ProfileUpdate";
 
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import ResetPassword from "./pages/auth/ResetPassword";
+import Contact from "./pages/user/Contact";
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,11 +27,14 @@ function App() {
         <Route path="/" element={<RootLayout />}>
           <Route index={true} element={<Landing />} />
           <Route path="adverts" element={<Adverts />} />
-          <Route path="adverts/:id" element={<SingleAd />} />
+          <Route path="adverts/:id" element={<SingleAd />} /> 
+          <Route path= "contact" element={<Contact />}/>
         </Route>
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/resetpassword" element={<ResetPassword />} />
 
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index={true} element={<Overview />} />

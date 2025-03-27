@@ -32,8 +32,8 @@ const Footer = () => {
           <Instagram className="cursor-pointer hover:text-blue-300 font-light" />
           <Linkedin className="cursor-pointer hover:text-blue-300 font-light" />
         </div>
-        <div className=" border border-grey-300 flex h-10 max-w-50 mr-20 w-50">
-         <div className="flex justify-end"> <Search className="cursor-product hover:text-blue-300 font-bol " /></div>
+        <div className="  h-10 max-w-50 mr-20 w-50 items-center">
+          <Search className="cursor-product hover:text-blue-300 font-bol  " />
         </div>
       </div>
       <h1 className="flex justify-center p-40 border-t font-light">
