@@ -13,7 +13,11 @@ import VendorAds from "./pages/dashboard/VendorAds";
 import EditProduct from "./pages/dashboard/EditProduct";
 import SingleProduct from "./pages/dashboard/SingleProduct";
 import VendorProfile from "./pages/dashboard/VendorProfile";
+
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import ResetPassword from "./pages/auth/ResetPassword";
 import Contact from "./pages/user/Contact";
+
 
 function App() {
   return (
@@ -28,6 +32,8 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/resetpassword" element={<ResetPassword />} />
 
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index={true} element={<Overview />} />

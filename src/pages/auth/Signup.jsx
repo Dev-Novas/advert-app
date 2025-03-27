@@ -9,6 +9,10 @@ const Signup = () => {
     // Show loading indicator
     // Collect form data
     const data = new FormData(event.target);
+    const role = data.get("role");
+    if (!role) {
+      alert("Please select a role.");
+    return;}
     // Post data to backend
     try {
       const response = await apiSignup(data);
@@ -79,14 +83,21 @@ const Signup = () => {
               >
                 Role
               </label>
-              <input
+              <select
                 type="role"
                 id="role"
                 name="role"
                 placeholder="Enter your role"
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+              >
+                <option value="" disabled selected className="text-gray-400">
+                  Select your role
+                </option>
+                <option value="user" className="text-black" >User</option>
+                <option value="vendor" className="text-black" >Vendor</option>
+                <option value="superadmin" className="text-black" >Superadmin</option>
+              </select>
             </div>
 
             <div>

@@ -1,23 +1,23 @@
 import Laptop from "../../assets/pics/laptop-2.mp4";
-import { apiLogin } from "../../services/auth";
+import { apiResetPassword } from "../../services/auth";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
 
-const Login = () => {
+const ResetPassword = () => {
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
     try {
-      const response = await apiLogin(formData);
+      const response = await apiResetPassword(formData);
       const { user } = response.data;
       localStorage.setItem("token", response.data.accessToken); //fetch token from backend
       localStorage.setItem("user", JSON.stringify(user.role));
 
       //nagigate user to their role
       if (user.role === "vendor") {
-        navigate("/dashboard");
+        navigate("/login");
       } else {
         navigate("/");
       }
@@ -42,20 +42,20 @@ const Login = () => {
 
       <div className="relative flex flex-col items-center justify-center h-full text-white ">
         <div className="bg-black/50 backdrop-blur-md p-8 rounded-lg shadow-md w-full max-w-md items-center relative ">
-          <h1 className="text-2xl font-semibold text-center mb-6">Log In</h1>
+          <h1 className="text-2xl font-semibold text-center mb-6">Reset Password</h1>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
-                htmlFor="email"
+                htmlFor="code"
                 className="block text-sm font-medium text-white"
               >
-                Email
+                Code
               </label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
+                type="code"
+                id="code"
+                name="code"
+                placeholder="Enter the code sent to your email"
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
@@ -63,22 +63,42 @@ const Login = () => {
 
             <div>
               <label
-                htmlFor="password"
+                htmlFor="new password"
                 className="block text-sm font-medium text-white"
               >
-                Password
+               New Password
               </label>
               <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
+                type="new password"
+                id="new password"
+                name="newPassword"
+                placeholder="Enter your new password"
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
-              <p className="text-sm text-blue-500 hover:underline mt-2">
+              {/* <p className="text-sm text-blue-500 hover:underline mt-2">
                 <Link to="/forgotpassword">Forgot Password?</Link>
-              </p>
+              </p> */}
+            </div>
+
+            <div>
+              <label
+                htmlFor=" confirm new password"
+                className="block text-sm font-medium text-white"
+              >
+               Confirm New Password
+              </label>
+              <input
+                type=" confirm new password"
+                id=" confirm new password"
+                name=" confirmNewPassword"
+                placeholder="Confirm your new password"
+                required
+                className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+              {/* <p className="text-sm text-blue-500 hover:underline mt-2">
+                <Link to="/forgotpassword">Forgot Password?</Link>
+              </p> */}
             </div>
 
             <button
@@ -101,4 +121,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ResetPassword;
