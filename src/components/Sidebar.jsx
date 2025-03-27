@@ -1,6 +1,6 @@
 import React from "react";
 import K from "../constants";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { LogOutIcon } from "lucide-react";
 import eg1 from "../assets/photos/eg1.png";
 
@@ -31,10 +31,13 @@ const Sidebar = () => {
           );
         })}
       </div>
-      <div className="flex gap-2 mt-auto hover:bg-white hover:text-black px-3 py-2 w-full rounded-md items-center gap-x-2">
-        <LogOutIcon className="text-[#00a2ef]" />
+      <Link
+        className="flex gap-2 mt-auto hover:bg-white hover:text-black px-3 py-2 w-full rounded-md items-center gap-x-2"
+        to={"/"}
+      >
+        <LogOutIcon className="text-[#2563eb]" />
         <button className="mt-auto ">Logout</button>
-      </div>
+      </Link>
     </div>
   );
 };

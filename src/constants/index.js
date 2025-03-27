@@ -22,10 +22,10 @@ export default {
       path: "/dashboard",
       icon: User,
     },
-    {
-      name: "Update Ad",
-      path: "/dashboard/edit-ad",
-      icon: Edit,
-    },
+    // {
+    //   name: "Update Ad",
+    //   path: "/dashboard/edit-ad/:id",
+    //   icon: Edit,
+    // },
   ],
 };
