@@ -7,13 +7,14 @@ export const apiAddAdvert = async (payload) =>
     },
   });
 
-export const apiGetAllAdverts = async () => apiClient.get("/adverts",
-  {
+export const apiGetAllAdverts = async (filterType, filter) => {
+  console.log(filterType, filter);
+  return apiClient.get(`/adverts?filterType=${filterType}&filter=${filter}&sort=createdAt&order=desc`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
-
+}
 
 export const apiGetVenderAdverts = async () =>
   apiClient("/adverts/vendor", {
@@ -28,4 +29,8 @@ export const apiUpdateAdvert = async (id, payload) =>
   apiClient(`/adverts/${id}`, payload);
 
 export const apiGetAdvertbyId = async (id) =>
-  apiClient(`/adverts/:id/${id}`, payload);
+  apiClient(`/adverts/${id}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
