@@ -11,8 +11,10 @@ export const apiSignup = async (payload) => {
 export const apiLogin = async (payload) =>
   apiClient.post("/users/login", payload, {
     headers: {
-        "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
   });
+
+export const apiGetAuthenticatedUser = async () => apiClient.get("/users/me");
 
 // export const apiForgotPassword = (payload) => apiClient.post("users/forgot-password", payload);

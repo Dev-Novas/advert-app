@@ -1,11 +1,27 @@
 import { Calendar } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import StatCards from "../../components/StatCards";
 import ActivityGraph from "../../components/ActivityGraph";
 import UsageRadar from "../../components/UsageRadar";
 import RecentTransactions from "../../components/RecentTransactions";
+import { apiGetAuthenticatedUser } from "../../services/auth";
 
 const Overview = () => {
+  const [vendor, setVendor] = useState({});
+
+  const getVendor = async () => {
+    try {
+      const response = await apiGetAuthenticatedUser();
+      setVendor(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getVendor();
+  }, []);
+
   return (
     // <div>
     //   <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent p-2">
@@ -19,7 +35,7 @@ const Overview = () => {
         <div className="flex items-center justify-between p-0.5">
           <div>
             <span className="text-sm font-bold block">
-              Good morning, Vendor!
+              Good morning, {vendor.name}!
             </span>
             <span className="text-xs block text-stone-500">
               Friday, March 28th 2025

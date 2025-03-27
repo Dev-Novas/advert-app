@@ -13,6 +13,7 @@ import VendorAds from "./pages/dashboard/VendorAds";
 import EditProduct from "./pages/dashboard/EditProduct";
 import SingleProduct from "./pages/dashboard/SingleProduct";
 import VendorProfile from "./pages/dashboard/VendorProfile";
+import ProfileUpdate from "./pages/dashboard/ProfileUpdate";
 
 function App() {
   return (
@@ -31,9 +32,10 @@ function App() {
           <Route index={true} element={<Overview />} />
           <Route path="create-ad" element={<CreateAd />} />
           <Route path="ads" element={<VendorAds />} />
-          <Route path="edit-ad" element={<EditProduct />} />
+          <Route path="edit-ad/:id" element={<EditProduct />} />
           <Route path="single-product" element={<SingleProduct />} />
           <Route path="vendor-profile" element={<VendorProfile />} />
+          <Route path="profile-update" element={<ProfileUpdate />} />
         </Route>
       </Routes>
     </BrowserRouter>

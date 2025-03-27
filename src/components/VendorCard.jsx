@@ -2,15 +2,31 @@ import React from "react";
 import { EditIcon, Trash } from "lucide-react";
 import { Link } from "react-router"; // Import Link if using React Router
 import p1 from "../assets/photos/p1.png";
+import { apiDeleteVendorAdvertbyId } from "../services/adverts";
 
 const VendorCard = ({ ad }) => {
+  const imageURL = "https://res.cloudinary.com/dwhmwz2nm/image/upload/";
+
+  const handleDelete = async () => {
+    // Delete advert from backend
+    try {
+      const response = await apiDeleteVendorAdvertbyId(ad.id);
+      console.log(response.data);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <div className="bg-gray-300 rounded-md">
+    <div className="p-4">
       <div className="bg-white w-[260px] flex flex-col justify-center items-center rounded-lg border border-stone-300">
         <div>
           <Link to="/dashboard/single-product">
             <img
-              src={`https://res.cloudinary.com/dwhmwz2nm/image/upload/${ad.image}`}
+              src={`${imageURL}${ad.image}.${
+                ad.image?.includes("png") ? "png" : "jpg"
+              }`}
               alt="product.image"
               className="w-full h-[200px] object-cover rounded-t-lg shadow-md"
             />
@@ -34,16 +50,12 @@ const VendorCard = ({ ad }) => {
               Available
             </span>
             {/* Method 1: Using React Router */}
-            <Link to="/dashboard/edit-ad">
+            <Link to={`/dashboard/edit-ad/${ad.id}`}>
               <EditIcon className="w-5 h-5 cursor-pointer text-blue-500 hover:text-blue-700" />
             </Link>
-
-            {/* Method 2: Using window.location.href */}
-            {/* <button onClick={() => (window.location.href = "/edit-product")}>
-              <EditIcon className="text-red-400 cursor-pointer" />
-            </button> */}
-
-            <Trash className="text-red-500 hover:text-red-700 cursor-pointer w-5 h-5" />
+            <button onClick={handleDelete}>
+              <Trash className="text-red-500 hover:text-red-700 cursor-pointer w-5 h-5" />
+            </button>
           </div>
         </div>
       </div>

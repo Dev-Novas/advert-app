@@ -1,23 +1,35 @@
 import React from "react";
 import video1 from "../../assets/photos/video1.mp4";
 import { apiAddAdvert } from "../../services/adverts";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const CreateAd = () => {
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    setLoading(true);
 
     const formData = new FormData(event.target); //line to get your data
 
     try {
       const response = await apiAddAdvert(formData);
       console.log(response);
+
+      //Move user to vendor ads
+      navigate("/dashboard/ads");
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="flex-1 flex flex-col p-6 w-full bg-[#F7F7F7] pt-14">
+    <div className="flex-1 flex flex-col p-6 w-full bg-[#F7F7F7] pt-14 font-tektur-au">
       <h1
         className="text-4xl mb-1 flex justify-center items-center 
   font-bold text-gray-700 p-1.5  border-b-2 border-blue-500 pb-2 
@@ -139,9 +151,21 @@ const CreateAd = () => {
             <div>
               <button
                 type="submit"
-                className="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex items-center"
               >
-                Post Advert
+                {loading && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-7 animate-[spin_0.8s_linear_infinite] fill-blue-600 block mx-auto"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
+                      data-original="#000000"
+                    />
+                  </svg>
+                )}
+                <span>Post Advert</span>
               </button>
             </div>
           </form>
