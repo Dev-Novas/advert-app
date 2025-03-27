@@ -9,16 +9,16 @@ const VendorProfile = () => {
           Vendor Profile
         </h2>
       </div>
-      <div className="flex flex-row gap-x-6 items-center w-[90%] bg-white h-[20vh] rounded-md mx-auto p-5">
+      <div className="flex flex-row gap-x-10 items-center w-[90%] bg-white h-[20vh] rounded-md mx-auto p-5">
         <img src={profile} alt="" className="w-30 h-30 rounded-[50%]" />
         <div className="flex flex-col justify-evenly">
-          <h2 className="text-2xl text-stone-700">John Doe</h2>
+          <h2 className="text-2xl text-stone-700 font-bold">John Doe</h2>
           <span className="text-[16px] text-stone-700">Vendor</span>
           <span className="text-[16px] text-stone-700">Accra, Ghana</span>
         </div>
       </div>
       <div className="w-[90%] bg-white h-[40vh] rounded-md mx-auto p-5">
-        <div className="border-b-2 border-gray-500 p-5 flex flex-row justify-between items-center">
+        <div className="border-b-2 border-gray-300 p-5 flex flex-row justify-between items-center">
           <h2 className="text-[18px] font-bold text-stone-700">
             Personal Information
           </h2>
@@ -32,29 +32,29 @@ const VendorProfile = () => {
             <span className="font-bold">John Doe</span>
           </div>
           <div className="flex flex-col gap-y-2">
-            <span className="font-light">Name</span>
+            <span className="font-light">Status</span>
+            <span className="font-bold">Online</span>
+          </div>
+          <div className="flex flex-col gap-y-2">
+            <span className="font-light">Date of Birth</span>
+            <span className="font-bold">12-10-1920</span>
+          </div>
+          <div className="flex flex-col gap-y-2">
+            <span className="font-light">E-mail Address</span>
             <span className="font-bold">John Doe</span>
           </div>
           <div className="flex flex-col gap-y-2">
-            <span className="font-light">Name</span>
-            <span className="font-bold">John Doe</span>
+            <span className="font-light">Phone Number</span>
+            <span className="font-bold">+233 55558445</span>
           </div>
           <div className="flex flex-col gap-y-2">
-            <span className="font-light">Name</span>
-            <span className="font-bold">John Doe</span>
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <span className="font-light">Name</span>
-            <span className="font-bold">John Doe</span>
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <span className="font-light">Name</span>
+            <span className="font-light">User Role</span>
             <span className="font-bold">John Doe</span>
           </div>
         </div>
       </div>
-      <div className="w-[90%] bg-white h-[40vh] rounded-md mx-auto p-5">
-        <div className="border-b-2 border-gray-500 p-5">
+      <div className="w-[90%] bg-white h-[30vh] rounded-md mx-auto p-5">
+        <div className="border-b-2 border-gray-300 p-5">
           <h1 className="text-[18px] font-bold text-stone-700">Address</h1>
         </div>
         <div className="grid grid-cols-3 gap-5 p-5">

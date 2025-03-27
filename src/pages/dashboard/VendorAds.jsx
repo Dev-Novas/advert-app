@@ -40,7 +40,7 @@ const VendorAds = () => {
           My Products
         </h1>
       </div>
-      <div className="">
+      <div className="grid grid-cols-4 gap-2">
         {ads.map((ad) => {
           return <VendorCard key={ad.id} ad={ad} />;
         })}
