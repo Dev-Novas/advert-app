@@ -1,8 +1,11 @@
 import React from "react";
 import Laptop from "../../assets/pics/laptop-2.mp4";
 import { apiSignup } from "../../services/auth";
+import { useNavigate } from "react-router";
 
 const Signup = () => {
+
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     // Prevent default submit bahaviour
     event.preventDefault();
@@ -12,10 +15,22 @@ const Signup = () => {
     const role = data.get("role");
     if (!role) {
       alert("Please select a role.");
-    return;}
+      return;
+    }
     // Post data to backend
     try {
       const response = await apiSignup(data);
+      const { user } = response.data;
+      localStorage.setItem("user", JSON.stringify(user.role));
+
+      //nagigate user to their role
+      if (user.role === "vendor") {
+        navigate("/login");
+      } else {
+        navigate("/");
+      }
+
+
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -89,9 +104,10 @@ const Signup = () => {
                 name="role"
                 placeholder="Enter your role"
                 required
+                defaultValue={" "}
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
-                <option value="" disabled selected className="text-gray-400">
+                <option value="" disabled className="text-gray-400">
                   Select your role
                 </option>
                 <option value="user" className="text-black" >User</option>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { apiForgotPassword } from "../../services/auth";
+import { Link } from "react-router";
+
 
 const ForgotPassword = () => {
 
@@ -25,8 +27,8 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-lg font-bold">Enter Mail To Reset Your Password</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[url(assets/pics/phone.jpg)] bg-cover">
+      <h2 className="text-lg font-bold text-white">Enter Mail To Reset Your Password</h2>
       <form onSubmit={handleSubmit} className="space-y-4 mt-4">
         <input
           type="email"
@@ -40,8 +42,12 @@ const ForgotPassword = () => {
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
           Send Reset Link
         </button>
+
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md ml-10">
+        <Link to="/resetpassword">Reset Password?</Link>
+        </button>
       </form>
-      {message && <p className="mt-2 text-red-600">{message}</p>}
+      {message && <p className="mt-2 text-green-300">{message}</p>}
     </div>
   );
 };

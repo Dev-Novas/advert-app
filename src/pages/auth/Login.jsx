@@ -19,7 +19,7 @@ const Login = () => {
       if (user.role === "vendor") {
         navigate("/dashboard");
       } else {
-        navigate("/");
+        navigate("/adverts");
       }
       console.log(response);
     } catch (error) {
