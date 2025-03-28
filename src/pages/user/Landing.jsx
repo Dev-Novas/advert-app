@@ -18,7 +18,7 @@ const Landing = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-[url('assets/images/herobg1.png')] min-h-screen flex flex-col items-center justify-center px-4">
+      <div className="bg-[url('assets/images/herobg1.png')] min-h-screen flex flex-col items-center justify-center px-4 bg-no-repeat">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl text-white font-bold pb-4">
             Welcome To DiGi TECH
@@ -29,7 +29,7 @@ const Landing = () => {
         </div>
 
         {/* Search Bar Section */}
-        <div className="w-full max-w-4xl p-4">
+        <div className="w-full max-w-4xl p-4 relative -z-1">
           <div className="flex flex-wrap md:flex-nowrap gap-3 px-4 py-4 bg-transparent backdrop-blur-md rounded-lg shadow-md w-full">
             {/* Search Input */}
             <div className="w-full md:w-64">
