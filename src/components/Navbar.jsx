@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router"; 
+import { Link, useLocation,useNavigate } from "react-router"; 
 import eg1 from "../assets/photos/eg1.png";
 import { MenuIcon, X } from "lucide-react";
 
 const Navbar = () => {
+  const [role, setRole] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    setRole(JSON.parse(user));
+  },[]);
+
+  console.log(role);
+
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload();
+    navigate("/")
+
+    
+  }
 
   
   const isAdvertsPage =
@@ -29,15 +46,17 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div
           className={`absolute md:static top-16 left-0 w-full md:w-auto bg-transparent backdrop-blur-md rounded-lg md:bg-transparent shadow-md md:shadow-none md:flex items-center space-x-6 px-6 py-4 md:py-0 transition-all duration-300 text-lg ${
-            menuOpen ? "block" : "hidden md:flex"
+            menuOpen ? "block bg-white"  : "hidden md:flex"
           }`}
         >
           <Link to="/" className="block md:inline py-2 md:py-0">
             Home
           </Link>
-          <Link to="/adverts" className="block md:inline py-2 md:py-0">
-            Products
-          </Link>
+          {role==="user" && (
+            <Link to="/adverts" className="block md:inline py-2 md:py-0">
+              Products
+            </Link>
+          )}
           <Link to="/about" className="block md:inline py-2 md:py-0">
             About
           </Link>
@@ -50,46 +69,60 @@ const Navbar = () => {
 
           {/* Authentication Buttons (Changes on /adverts and /adverts/:id) */}
           <div className="block md:hidden py-2">
-            {isAdvertsPage ? (
-              <Link to="/">
-                <button className="block w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
-                Logout
-              </button>
-              </Link>
-            ) : (
-              <>
-                <Link to="/login" className="block py-2">
-                  Log In
+            {role === "user"
+              ? (
+                <Link to='/'>
+                  <button 
+                  className="block w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
                 </Link>
-                <Link to="/signup">
-                  <button className="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
-                    Sign Up
-                  </button>
-                </Link>
-              </>
-            )}
+              )
+              : (
+
+                <>
+                  <Link to="/login" className="block py-2">
+                    Log In
+                  </Link>
+                  <Link to="/signup">
+                    <button className="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
+                      Sign Up
+                    </button>
+                  </Link>
+                </>
+              )
+            }
+          
           </div>
         </div>
 
         {/* Desktop Authentication Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <div>|</div>
-          {isAdvertsPage ? (
-            <Link to="/">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
-              Logout
-            </button>
-            </Link>
-          ) : (
-            <>
-              <Link to="/login">Log In</Link>
-              <Link to="/signup">
-                <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
-                  Sign Up
+          {role==="user"
+            ? (
+              <Link to='/'>
+                  <button 
+                    className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+                    onClick={handleLogout}
+                  >
+                  Logout
                 </button>
               </Link>
-            </>
-          )}
+            )
+            : (
+              <>
+                <Link to="/login">Log In</Link>
+                <Link to="/signup">
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
+                    Sign Up
+                  </button>
+                </Link>
+              </>
+            )
+          }
+          
         </div>
       </div>
     </nav>

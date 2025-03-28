@@ -49,13 +49,13 @@ const Adverts = () => {
         </div>
       </div>
 
-      {/* ✅ Search & Filter Section */}
+      {/* Search & Filter Section */}
       <div className="flex items-center gap-4 mt-4 justify-center">
         <form
           onSubmit={getAds}
           className="flex flex-wrap items-center justify-center gap-4 bg-gray-100 p-4 rounded-lg shadow-md"
         >
-          {/* ✅ Filter Dropdown */}
+          {/* Filter Dropdown */}
           <select
             className="h-10 px-4 border rounded-md text-gray-700 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
             value={selectedFilterType}
@@ -68,7 +68,7 @@ const Adverts = () => {
             <option value="lte">Price less than</option>
           </select>
 
-          {/* ✅ Search Input */}
+          {/*  Search Input */}
           <input
             type="text"
             placeholder="Enter keyword or price"
@@ -77,7 +77,7 @@ const Adverts = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
 
-          {/* ✅ Search Button */}
+          {/* Search Button */}
           <button
             type="submit"
             className="h-10 bg-blue-500 text-white px-6 rounded-md hover:bg-blue-600 transition shadow-md flex items-center"
@@ -87,7 +87,7 @@ const Adverts = () => {
         </form>
       </div>
 
-      {/* ✅ Display Ads */}
+      {/* Display Ads */}
       <div>
         <div className="max-w-7xl mx-auto p-4">
           {ads.length > 0 ? (
@@ -117,7 +117,7 @@ const Adverts = () => {
               ))}
             </div>
           ) : (
-            // ✅ Show "No Products Found" message when ads are empty
+            //  Show "No Products Found" message when ads are empty
             <p className="text-center text-red-700 mt-6 text-xl font-semibold">
               No products found.
             </p>

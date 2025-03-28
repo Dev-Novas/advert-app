@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HeartIcon, MapPinIcon } from "lucide-react";
 import phone from "../../assets/images/phone.png";
 import accessories from "../../assets/images/accessories.png";
@@ -13,12 +13,18 @@ import keyboard from "../../assets/images/keyboard.png";
 import { Link } from "react-router";
 
 const Landing = () => {
+   const [role, setRole] = useState(null);
+
+   useEffect(() => {
+       const user = localStorage.getItem('user');
+       setRole(JSON.parse(user));
+     },[]);
 
   
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-[url('assets/images/herobg1.png')] min-h-screen flex flex-col items-center justify-center px-4">
+      <div className="bg-[url('assets/images/herobg1.png')] min-h-screen flex flex-col items-center justify-center px-4 bg-no-repeat">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl text-white font-bold pb-4">
             Welcome To DiGi TECH
@@ -29,7 +35,7 @@ const Landing = () => {
         </div>
 
         {/* Search Bar Section */}
-        <div className="w-full max-w-4xl p-4">
+        <div className="w-full max-w-4xl p-4 relative -z-1">
           <div className="flex flex-wrap md:flex-nowrap gap-3 px-4 py-4 bg-transparent backdrop-blur-md rounded-lg shadow-md w-full">
             {/* Search Input */}
             <div className="w-full md:w-64">
@@ -96,7 +102,15 @@ const Landing = () => {
         <div className="container mx-auto px-4">
          <div className="flex items-center justify-between">
          <h2 className="text-xl font-bold text-blue-900 mb-4">Featured Ads</h2>
-         <h2 className="text-xl font-bold text-blue-900 mb-4">Want to view all products? <Link className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-md transition" to="/login">Login</Link></h2>
+         {role !== "user" && (
+          <h2 className="text-xl font-bold text-blue-900 mb-4">Want to view all products? 
+              <Link 
+                className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-md transition" to="/login"
+              >
+                Login
+              </Link>
+          </h2>
+         )}
          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* phones */}
