@@ -1,5 +1,6 @@
 import React from "react";
 import profile from "../../assets/photos/profile.png";
+import { Link } from "react-router";
 
 const VendorProfile = () => {
   return (
@@ -22,9 +23,11 @@ const VendorProfile = () => {
           <h2 className="text-[18px] font-bold text-stone-700">
             Personal Information
           </h2>
-          <button className=" bg-blue-300 text-white rounded-md w-fit px-5">
-            Edit
-          </button>
+          <Link to={"/dashboard/profile-update"}>
+            <button className=" bg-blue-300 text-white rounded-md w-fit px-5">
+              Edit
+            </button>
+          </Link>
         </div>
         <div className="grid grid-cols-3 gap-5 p-5">
           <div className="flex flex-col gap-y-2">

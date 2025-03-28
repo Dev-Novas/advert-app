@@ -8,6 +8,7 @@ import {
 } from "../../services/adverts";
 
 const EditProduct = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
   const [ad, setAd] = useState({});
@@ -28,15 +29,25 @@ const EditProduct = () => {
   const handleSubmit = async (event) => {
     // Prevent default event
     event.preventDefault();
+
+    setLoading(true);
+
     // Collect form data
     const data = new FormData(event.target);
     // Post data to backend
     try {
       const response = await apiUpdateAdvert(id, data);
       console.log(response.data);
+
+      alert("Ad updated successfully!"); // Show success alert
+
       navigate("/dashboard/ads");
     } catch (error) {
       console.log(error);
+
+      alert("Failed to update ad. Please try again."); //Show failure message
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -142,9 +153,21 @@ const EditProduct = () => {
             <div>
               <button
                 type="submit"
-                className="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex items-center"
               >
-                Update Advert
+                {loading && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-7 animate-[spin_0.8s_linear_infinite] fill-blue-600 block mx-auto"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
+                      data-original="#000000"
+                    />
+                  </svg>
+                )}
+                <span>Update Advert</span>
               </button>
             </div>
           </form>

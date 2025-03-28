@@ -19,10 +19,14 @@ const CreateAd = () => {
       const response = await apiAddAdvert(formData);
       console.log(response);
 
+      alert("Ad created successfully!"); // Show success alert
+
       //Move user to vendor ads
       navigate("/dashboard/ads");
     } catch (error) {
       console.log(error);
+
+      alert("Failed to create ad. Please try again.");
     } finally {
       setLoading(false);
     }
