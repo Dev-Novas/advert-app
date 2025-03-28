@@ -5,6 +5,7 @@ import ActivityGraph from "../../components/ActivityGraph";
 import UsageRadar from "../../components/UsageRadar";
 import RecentTransactions from "../../components/RecentTransactions";
 import { apiGetAuthenticatedUser } from "../../services/auth";
+import { Link } from "react-router";
 
 const Overview = () => {
   const [vendor, setVendor] = useState({});
@@ -34,9 +35,12 @@ const Overview = () => {
       <div className="border-b px-4 mb-4 mt-2 pb-4 border-stone-200">
         <div className="flex items-center justify-between p-0.5">
           <div>
-            <span className="text-sm font-bold block">
+            <Link
+              to={"/dashboard/vendor-profile"}
+              className="text-sm font-bold block"
+            >
               Good morning, {vendor.name}!
-            </span>
+            </Link>
             <span className="text-xs block text-stone-500">
               Friday, March 28th 2025
             </span>
