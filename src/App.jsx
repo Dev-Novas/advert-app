@@ -14,7 +14,6 @@ import EditProduct from "./pages/dashboard/EditProduct";
 import SingleProduct from "./pages/dashboard/SingleProduct";
 import VendorProfile from "./pages/dashboard/VendorProfile";
 import ProfileUpdate from "./pages/dashboard/ProfileUpdate";
-
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import ResetPassword from "./pages/auth/ResetPassword";
 import Contact from "./pages/user/Contact";

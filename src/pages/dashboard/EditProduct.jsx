@@ -41,7 +41,7 @@ const EditProduct = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col p-6 w-full bg-[#F7F7F7] pt-14">
+    <div className="flex-1 flex flex-col p-6 w-full bg-[#f7f3f3] pt-14">
       <h1 className="text-4xl mb-1 flex justify-center items-center font-bold text-gray-700 p-1.5  border-b-2 border-blue-500 pb-2 w-fit mx-auto">
         Update Advert
       </h1>
